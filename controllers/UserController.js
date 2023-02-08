@@ -6,8 +6,9 @@ const bcrypt = require("bcryptjs");
 const UserController = {
   async createUser(req, res) {
     try {
+      
       const password = await bcrypt.hash(req.body.password, 10);
-      const user = await User.create({ ...req.body, password });
+      const user = await User.create({ ...req.body, password, role:"user"});
       res.status(201).send(user);
     } catch (error) {
       console.error(error);
