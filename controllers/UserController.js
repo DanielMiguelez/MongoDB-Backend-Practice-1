@@ -10,7 +10,7 @@ const UserController = {
       const user = await User.create({ ...req.body, password, role: "user" });
       res.status(201).send(user);
     } catch (error) {
-      console.error(error);
+      error.origin = 'usuario'
       next(error)
     }
   },
@@ -61,8 +61,10 @@ const UserController = {
       .populate({path: "OrderIds",
       populate: {
         path: "productIds",
-      }
-    })
+      },
+      
+    }).populate("wishList");
+
       res.send(user)
     } catch (error) {
       console.error(error);
