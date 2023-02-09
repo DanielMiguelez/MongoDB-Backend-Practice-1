@@ -57,6 +57,14 @@ const UserController = {
       });
     }
   },
+  async getInfo (req,res){
+    try {
+      const user = await User.findByIdAndUpdate(req.user._id).populate("OrderIds")
+      res.send(user)
+    } catch (error) {
+      console.error(error);
+    }
+  }
 };
 
 module.exports = UserController;

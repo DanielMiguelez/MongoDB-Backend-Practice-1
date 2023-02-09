@@ -15,7 +15,10 @@ const ProductController = {
 
   async getAllProducts(req, res) {
     try {
-      const products = await Product.find();
+      const products = await Product.find()
+      .populate("reviews.userId")
+      .limit(req.query.limit)
+      .skip((req.query.page - 1) * req.query.limit) 
       res.send(products);
     } catch (error) {
       console.error(error);
@@ -88,9 +91,26 @@ const ProductController = {
       console.error(error);
       res
         .status(500)
-        .send({ message: "Ha habido un problema eliminando", error });
+        .send({ message: "problem while deleting", error });
     }
   },
-};
+
+  async insertComment(req,res){
+    try {
+      const product = await Product.findByIdAndUpdate(
+        req.params._id,
+        {$push: { reviews: { comment:req.body.comment, userId: req.user._id } }},
+        {new:true}
+      )
+      res.send({ message: "commented product ", product });
+    } catch (error) {
+      console.error(error);
+      res
+        .status(500)
+        .send({ message: "problem commenting", error });
+    }
+    }
+  };
+
 
 module.exports = ProductController;

@@ -11,4 +11,5 @@ router.get("/getProductById/:_id", ProductController.getProductById)
 router.get("/getProductsByName/:name", ProductController.getProductsByName)
 router.delete("/deleteProduct/:_id", authentication, isAdmin, ProductController.deleteProduct)
 router.put("/updateProductById/:_id",authentication, isAdmin, ProductController.updateProductById)
+router.put("/insertComment/:_id",authentication, ProductController.insertComment)
 module.exports = router
