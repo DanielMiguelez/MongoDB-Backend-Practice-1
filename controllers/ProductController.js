@@ -1,4 +1,5 @@
 const Product = require("../models/Product");
+const User = require("../models/User");
 
 const ProductController = {
   async create(req, res) {
@@ -16,9 +17,9 @@ const ProductController = {
   async getAllProducts(req, res) {
     try {
       const products = await Product.find()
-      .populate("reviews.userId")
-      .limit(req.query.limit)
-      .skip((req.query.page - 1) * req.query.limit) 
+        .populate("reviews.userId")
+        .limit(req.query.limit)
+        .skip((req.query.page - 1) * req.query.limit);
       res.send(products);
     } catch (error) {
       console.error(error);
@@ -34,12 +35,10 @@ const ProductController = {
       res.send(product);
     } catch (error) {
       console.error(error);
-      res
-        .status(500)
-        .send({
-          message: "Ha habido un problema al buscar el producto",
-          error,
-        });
+      res.status(500).send({
+        message: "Ha habido un problema al buscar el producto",
+        error,
+      });
     }
   },
 
@@ -60,12 +59,10 @@ const ProductController = {
       res.send(products);
     } catch (error) {
       console.error(error);
-      res
-        .status(500)
-        .send({
-          message: "Ha habido un problema al buscarlos por nombre",
-          error,
-        });
+      res.status(500).send({
+        message: "Ha habido un problema al buscarlos por nombre",
+        error,
+      });
     }
   },
 
@@ -83,34 +80,58 @@ const ProductController = {
 
   async updateProductById(req, res) {
     try {
-      const product = await Product.findByIdAndUpdate(req.params._id, req.body, {
-        new: true,
-      });
+      const product = await Product.findByIdAndUpdate(
+        req.params._id,
+        req.body,
+        {
+          new: true,
+        }
+      );
       res.send({ message: "Product updated", product });
     } catch (error) {
       console.error(error);
-      res
-        .status(500)
-        .send({ message: "problem while deleting", error });
+      res.status(500).send({ message: "problem while deleting", error });
     }
   },
 
-  async insertComment(req,res){
+  async insertComment(req, res) {
     try {
       const product = await Product.findByIdAndUpdate(
         req.params._id,
-        {$push: { reviews: { comment:req.body.comment, userId: req.user._id } }},
-        {new:true}
-      )
+        {
+          $push: {
+            reviews: { comment: req.body.comment, userId: req.user._id },
+          },
+        },
+        { new: true }
+      );
       res.send({ message: "commented product ", product });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send({ message: "problem commenting", error });
+    }
+  },
+
+  async like(req, res) {
+    try {
+      const product = await Product.findByIdAndUpdate(
+        req.params._id,
+        { $push: { likes: req.user._id } },
+        { new: true }
+      );
+      await User.findByIdAndUpdate(
+        req.user._id,
+        { $push: { wishList: req.params._id } },
+        { new: true }
+      );
+      res.send(product);
     } catch (error) {
       console.error(error);
       res
         .status(500)
-        .send({ message: "problem commenting", error });
+        .send({ message: "there was a problem liking the product" });
     }
-    }
-  };
-
+  },
+};
 
 module.exports = ProductController;
