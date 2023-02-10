@@ -1,8 +1,9 @@
 const express = require("express");
+const app = express()
+require("dotenv").config()
 const mongoose = require('mongoose');
 const {typeError} = require("./middlewares/errors")
-const app = express()
-const PORT = 8080
+const PORT = process.env.PORT || 8080
 const {dbConnection} = require ("./config/config")
 mongoose.set('strictQuery', false);
 
