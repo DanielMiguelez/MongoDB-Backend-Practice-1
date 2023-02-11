@@ -20,7 +20,7 @@ const ProductController = {
         .populate("reviews.userId")
         .limit(req.query.limit)
         .skip((req.query.page - 1) * req.query.limit);
-      res.send(products);
+      res.send({msg:"Products obtained", products});
     } catch (error) {
       console.error(error);
       res
