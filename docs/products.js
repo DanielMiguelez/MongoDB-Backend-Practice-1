@@ -104,6 +104,40 @@ module.exports = {
         },
       },
     },
+    "/products/getProductById/{_id}": {
+      get: {
+      
+        tags: {
+          Products: "Get by Id",
+        },
+
+        description: "get Product By Id",
+
+        operationId: "getProductById",
+
+        parameters: [
+          {
+            name: "_id",
+
+            in: "path",
+
+            schema: {
+              $ref: "#/components/schemas/_id",
+            },
+
+            description: "get Product By Id",
+          },
+        ],
+
+        responses: {
+          200: { description: "Product by Id successfully" },
+
+          404: { description: "Product not found" },
+
+          500: { description: "Server error" },
+        },
+      },
+    },
     "/products/deleteProduct/{_id}": {
       delete: {
         security: [{
