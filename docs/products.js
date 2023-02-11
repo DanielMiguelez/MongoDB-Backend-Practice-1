@@ -258,12 +258,12 @@ module.exports = {
           ApiKeyAuth: [ ]
           }],
         tags: {
-          Products: "insert Comment",
+          Products: "insert like",
         },
 
-        description: "insert Comment",
+        description: "insert like",
 
-        operationId: "insertComment",
+        operationId: "insertlike",
 
         parameters: [
           {
@@ -275,7 +275,7 @@ module.exports = {
               $ref: "#/components/schemas/_id",
             },
 
-            description: "insert Comment",
+            description: "insert like",
           },
         ],
 
@@ -288,9 +288,9 @@ module.exports = {
         },
 
         responses: {
-          200: { description: "insert Comment successfully" },
+          200: { description: "insert like successfully" },
 
-          404: { description: "not possible to insert the Comment" },
+          404: { description: "not possible to insert the like" },
 
           500: { description: "Server error" },
         },

@@ -77,6 +77,37 @@ module.exports = {
           example: "Balon",
         },
       },
+      schemas: {
+        order: {
+          type: "object",
+
+          properties: {
+            _id: {
+              type: "objectId",
+              description: "order identification number",
+              example: "6201064b0028de7866e2b2c4",
+            },
+
+            status: {
+              type: "string",
+              description: "Order status",
+              example: "available",
+            },
+
+            deliveryDate: {
+              type: "number",
+              description: "the date of the order",
+              example: 20/10/2023,
+            },
+            productIds: {
+              type: "array",
+              description: "The products of the order",
+              example: 4445,
+            },
+           
+          },
+        },
+      },
     },
   },
 };
