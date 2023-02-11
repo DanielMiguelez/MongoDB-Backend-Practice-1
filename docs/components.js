@@ -69,6 +69,13 @@ module.exports = {
 
           example: "6201064b0028de7866e2b2c4",
         },
+        name: {
+          type: "string",
+
+          description: "A name of a product",
+
+          example: "Balon",
+        },
       },
     },
   },
