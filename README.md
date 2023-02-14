@@ -36,16 +36,16 @@ In here you can see how POSTMAN works, I documented every endpoint that I have m
 
 1. In the first one I deployed the users to make an example with Railway, I leave the URL so you can see it in here:
 
-![foto](assets/RAILWAY_page-0001.jpg)
-
 https://mongodb-backend-practice-1-production.up.railway.app/products/getAllProducts
+
+![foto](assets/RAILWAY_page-0001.jpg)
 
 
 2. In this one the deployment has been done with vercel, It works the same way, but the URL is this one: 
 
-![foto](assets/VERCEL_page-0001.jpg)
-
 https://mongo-db-backend-practice-1.vercel.app/products/getAllProducts?limit=5&page=1
+
+![foto](assets/VERCEL_page-0001.jpg)
 
 
 3. And the last one I documented the endpoints, this time with Products, you can see them in here.
