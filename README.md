@@ -28,8 +28,10 @@ I have used the following technologies in this project:
 
 ### GIFS ABOUT MY PROJECT
 
-![foto](assets/like-and-dislike-post.gif)
+![foto](assets/RAILWAY.pdf)
 
-![foto](assets/showcode.gif)
+![foto](assets/SWAGGER.pdf)
+
+![foto](assets/VERCEL.pdf)
 
 Project developed by Daniel Miguelez [https://github.com/DanielMiguelez]
