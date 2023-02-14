@@ -21,6 +21,31 @@ const OrderController = {
       console.error(error);
     }
   },
+  async getAllOrders(req, res) {
+    try {
+      const orders = await Order.find()
+        .limit(req.query.limit)
+        .skip((req.query.page - 1) * req.query.limit);
+      res.send({msg:"Orders obtained", orders});
+    } catch (error) {
+      console.error(error);
+      res
+        .status(500)
+        .send({ message: "Ha habido un problema altraer ordenes", error });
+    }
+  },
+
+  async deleteOrder(req, res) {
+    try {
+      const order = await Order.findByIdAndDelete(req.params._id);
+      res.send({ order, message: "Order deleted" });
+    } catch (error) {
+      console.error(error);
+      res
+        .status(500)
+        .send({ message: "Ha habido un problema eliminando", error });
+    }
+  },
 
   async update(req, res) {
     try {
