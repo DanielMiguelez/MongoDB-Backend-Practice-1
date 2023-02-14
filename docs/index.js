@@ -4,10 +4,11 @@ const orders = require('./orders');
 const products = require('./products');
 
 
+
 module.exports = {
 ...basicInfo,
 ...components,
 ...products,
-...orders, 
+...orders
 
 };

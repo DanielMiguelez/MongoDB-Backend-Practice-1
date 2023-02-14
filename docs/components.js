@@ -8,6 +8,7 @@ module.exports = {
       },
 
       schemas: {
+        
         product: {
           type: "object",
 
@@ -41,7 +42,6 @@ module.exports = {
             },
           },
         },
-
         ProductInput: {
           type: "object",
 
@@ -63,7 +63,6 @@ module.exports = {
             },
           },
         },
-
         _id: {
           type: "objectId",
 
@@ -79,7 +78,6 @@ module.exports = {
           example: "Balon",
         },
       },
-
       schemas: {
         order: {
           type: "object",
@@ -100,16 +98,16 @@ module.exports = {
             deliveryDate: {
               type: "number",
               description: "the date of the order",
-              example: 20 / 10 / 2023,
+              example: 20/10/2023,
             },
             productIds: {
               type: "array",
               description: "The products of the order",
               example: 4445,
             },
+           
           },
         },
-
         OrderInput: {
           type: "object",
 
@@ -134,7 +132,7 @@ module.exports = {
 
               description: "products of the order",
 
-              example: 20 / 10 / 2023,
+              example: 20/10/2023,
             },
           },
         },
@@ -156,4 +154,4 @@ module.exports = {
       },
     },
   },
-}
+};

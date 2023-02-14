@@ -36,9 +36,11 @@ module.exports = {
 
     "/orders/updateOrderById/{_id}": {
       put: {
-        security: [{
-          ApiKeyAuth: [ ]
-          }],
+        security: [
+          {
+            ApiKeyAuth: [],
+          },
+        ],
         tags: {
           Orders: "Update an order",
         },
@@ -78,6 +80,5 @@ module.exports = {
         },
       },
     },
-    
   },
 };
