@@ -36,7 +36,7 @@ module.exports = {
           }],
 
         tags: {
-          Tasks: "Create product",
+          Products: "Create product",
         },
 
         description: "Create products",
