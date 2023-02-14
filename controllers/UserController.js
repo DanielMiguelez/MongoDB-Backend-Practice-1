@@ -69,7 +69,20 @@ const UserController = {
     } catch (error) {
       console.error(error);
     }
-  }
+  },
+  async getAllUsers(req, res) {
+    try {
+      const users = await User.find()
+        .limit(req.query.limit)
+        .skip((req.query.page - 1) * req.query.limit);
+      res.send({msg:"Users obtained", users});
+    } catch (error) {
+      console.error(error);
+      res
+        .status(500)
+        .send({ message: "Ha habido un problema altraer users", error });
+    }
+  },
 };
 
 module.exports = UserController;

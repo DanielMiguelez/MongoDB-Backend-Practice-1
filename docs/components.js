@@ -154,57 +154,6 @@ module.exports = {
           example: "available",
         },
       },
-
-      schemas: {
-        user: {
-          type: "object",
-
-          properties: {
-            _id: {
-              type: "ObjectId",
-              description: "user identification number",
-              example: "6201064b0028de7866e2b2c4",
-            },
-
-            name: {
-              type: "string",
-              description: "User name",
-              example: "Dani",
-            },
-
-            email: {
-              type: "number",
-              description: "user email",
-              example: "dani@gmail.com",
-            },
-            password: {
-              type: "string",
-              description: "password",
-              example: "holita",
-            },
-            age: {
-              type: "number",
-              description: "age",
-              example: 20,
-            },
-            tokens: {
-              type: "array",
-              description: "The tokens of the user",
-              example: 4445,
-            },
-            orderIds: {
-              type: "array",
-              description: "The ids of the orders",
-              example: 4445,
-            },
-            wishList: {
-              type: "array",
-              description: "The likes to products",
-              example: "balon liked",
-            },
-          },
-        },
-      },
     },
   },
-};
+}

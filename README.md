@@ -1,18 +1,19 @@
-# DANIEL MIGUELEZ BACKEND PROJECT 🥰
+# DANIEL MIGUELEZ MONGO DB PRACTICE 🥰
 
-In this backend project we will put in practice all the knowledge that has been given by our teachers during the lkast weeks, among the technologies that we found, we can highlight the next ones... node + express, además de MongoDB/mongoose.
-The project will be based on a social network.
+In this small project that I have made, I have used MongoDB, and also Mongoose to create my database, in here you can appreciate that I have, Users, Products, and Orders, and It is possibel also to comment the products, in case that you have liked it or not, it is also possible to put them into your wishlist.
 
 
-Once analized the project necessities, its expected that the student will develope an API able to do the following things: 
+Once ended the backend practice, it is expcted that I'll know haw to do the following things: 
 
 1. Register an user usin Bcrypt.
 2. Login users + token + middleware.
 3. To be able to create a CRUD.
 4. To give and delete a like from a post.
-5. To deploy a backend.
+5. To deploy a backend in Railway and in Vercel.
+6. To document every endpoint in swagger.
+7. Document every endpoint in postman.
 
-### To do 100% mandatory.
+### Another things that I have done during this project..
  1. Use git branches, at the end the 2 branches remaining should be the main branch and the develop.
  2. Excellent README has to be done.
 
