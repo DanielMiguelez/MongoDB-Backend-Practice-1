@@ -63,6 +63,19 @@ const OrderController = {
       console.error(error);
     }
   },
+
+  async getOrderById(req, res) {
+    try {
+      const order = await Order.findById(req.params._id);
+      res.send(order);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send({
+        message: "Ha habido un problema al buscar la orden",
+        error,
+      });
+    }
+  },
 };
 
 module.exports = OrderController;
