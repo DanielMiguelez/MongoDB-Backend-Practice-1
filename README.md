@@ -7,11 +7,14 @@ Once ended the backend practice, it is expcted that I'll know haw to do the foll
 
 1. Register an user usin Bcrypt.
 2. Login users + token + middleware.
-3. To be able to create a CRUD.
-4. To give and delete a like from a post.
-5. To deploy a backend in Railway and in Vercel.
-6. To document every endpoint in swagger.
-7. Document every endpoint in postman.
+3. To be able to create a CRUD and more endpoints.
+4. To give and delete a like from a product.
+5. Put reviews in every product.
+6. Middlewares, isAuthor, IsAdmin, and Autenticathion.
+7. To make relations between the components and a wishlist.
+8. To deploy a backend in Railway and in Vercel.
+9. To document every endpoint in swagger.
+10. Document every endpoint in postman.
 
 ### Another things that I have done during this project..
  1. Use git branches, at the end the 2 branches remaining should be the main branch and the develop.
